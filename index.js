@@ -1,29 +1,42 @@
-function add(a, b)
+function displayInput(value)
 {
-    return a + b;
+    document.getElementById("result").value += value;
 }
 
-function subtract(a, b)
+function clearInput()
 {
-    return a - b;
+    document.getElementById("result").value = "";
 }
 
-function multiply(a, b)
+function solve()
 {
-    return a * b;
+    let x = document.getElementById("result").value;
+    let y = Math.trunc(x);
+    document.getElementById("result").value = y;
 }
 
-function divide(a, b)
+function checkEvent(event)
 {
-    return a / b;
+    if (event.key == '0' || event.key == '1' ||
+        event.key == '2' || event.key == '3' ||
+        event.key == '4' || event.key == '5' ||
+        event.key == '6' || event.key == '7' ||
+        event.key == '8' || event.key == '9' ||
+        event.key == '+' || event.key == '-' ||
+        event.key == '*' || event.key == '/')
+        {
+            document.getElementById("result").value += event.key;
+        }
 }
 
-function operate(operator, a, b)
+var cal = document.getElementsByClassName("calculatorContainer");
+cal.onkeyup = function (event) 
 {
-    switch(operator) {
-        case "+": return add(a, b);
-        case "-": return subtract(a, b);
-        case "*": return multiply(a, b);
-        case "/": return divide(a, b);
+    if (event.keyCode === 13)
+    {
+        console.log("Enter");
+        let x = document.getElementById("result").value;
+        console.log(x);
+        solve();
     }
 }

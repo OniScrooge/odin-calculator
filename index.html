@@ -6,32 +6,35 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <table id="calculatorContainer">
+    <table class="calculatorContainer">
         <tr>
             <td colspan="3"><input type="text" id="result"></td>
-    
-            <td><input type="button" value="C" onclick="clear()" /></td>
+            <td><input type="button" value="C" onclick="clearInput()" /></td>
         </tr>
-        <div id="numberContainer">
-            <button class="number" id="0">0</button>
-            <button class="number" id="1">1</button>
-            <button class="number" id="2">2</button>
-            <button class="number" id="3">3</button>
-            <button class="number" id="4">4</button>
-            <button class="number" id="5">5</button>
-            <button class="number" id="6">6</button>
-            <button class="number" id="7">7</button>
-            <button class="number" id="8">8</button>
-            <button class="number" id="9">9</button>
-        </div>
-        <div id="operatorContainer">
-            <button class="operator" id="+">+</button>
-            <button class="operator" id="-">-</button>
-            <button class="operator" id="*">*</button>
-            <button class="operator" id="/">/</button>
-            <button class="operator" id="=">=</button>
-        </div>
-        <button id="clear">C</button>
+        <tr>
+            <td><input type="button" value="1" onclick="displayInput('1')" onkeydown="checkEvent(event)"></td>
+            <td><input type="button" value="2" onclick="displayInput('2')" onkeydown="checkEvent(event)"></td>
+            <td><input type="button" value="3" onclick="displayInput('3')" onkeydown="checkEvent(event)"></td>
+            <td><input type="button" value="/" onclick="displayInput('/')" onkeydown="checkEvent(event)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="displayInput('4')" onkeydown="checkEvent(event)"></td>
+            <td><input type="button" value="5" onclick="displayInput('5')" onkeydown="checkEvent(event)"></td>
+            <td><input type="button" value="6" onclick="displayInput('6')" onkeydown="checkEvent(event)"></td>
+            <td><input type="button" value="*" onclick="displayInput('*')" onkeydown="checkEvent(event)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="displayInput('7')" onkeydown="checkEvent(event)"></td>
+            <td><input type="button" value="8" onclick="displayInput('8')" onkeydown="checkEvent(event)"></td>
+            <td><input type="button" value="9" onclick="displayInput('9')" onkeydown="checkEvent(event)"></td>
+            <td><input type="button" value="-" onclick="displayInput('-')" onkeydown="checkEvent(event)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="." onclick="displayInput('.')" onkeydown="checkEvent(event)"></td>
+            <td><input type="button" value="0" onclick="displayInput('0')" onkeydown="checkEvent(event)"></td>
+            <td><input type="button" value="=" onclick="solve()"></td>
+            <td><input type="button" value="+" onclick="displayInput('+')" onkeydown="checkEvent(event)"></td>
+        </tr>
     </table>
     <script src="./index.js"></script>
 </body>
