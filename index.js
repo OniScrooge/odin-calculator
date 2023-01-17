@@ -11,7 +11,7 @@ function clearInput()
 function solve()
 {
     let x = document.getElementById("result").value;
-    let y = Math.trunc(x);
+    let y = eval(x);
     document.getElementById("result").value = y;
 }
 
